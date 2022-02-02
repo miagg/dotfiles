@@ -30,6 +30,8 @@
 ######################
 .DS_Store
 .DS_Store?
+.AppleDouble
+.LSOverride
 ._*
 .Spotlight-V100
 .Trashes
@@ -38,3 +40,9 @@ Thumbs.db
 .idea/
 .vscode
 .vagrant/
+.phpstorm.meta.php
+_ide_helper.php
+_ide_helper_models.php
+invoker
+Icon
+

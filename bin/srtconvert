@@ -1,0 +1,14 @@
+#!/bin/bash
+if [ -n "$1" ]
+   then
+     cd "$1"
+fi
+shopt -s nullglob
+for file in *.srt; do
+    if file -I "$file" | grep --quiet "charset=iso"; then
+       echo -n "$file "
+       iconv -f windows-1253 -t utf-8 < "$file" > "$file.tmp"
+       mv -f "$file.tmp" "$file"
+       echo -e "[\033[1;36m OK \033[m]"
+    fi
+done

@@ -16,8 +16,9 @@ if test ! $(which brew); then
 fi
 
 # Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
-rm -rf $HOME/.zshrc
-ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
+rm -rf $HOME/{.zshrc,.gitignore}
+ln -sf $HOME/.dotfiles/.zshrc $HOME/.zshrc
+ln -sf $HOME/.dotfiles/.gitignore $HOME/.gitignore_global
 
 # Update Homebrew recipes
 brew update
@@ -27,30 +28,41 @@ brew tap homebrew/bundle
 brew bundle --file $DOTFILES/Brewfile
 
 # Set default MySQL root password and auth type
-mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY 'password'; FLUSH PRIVILEGES;"
+#mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY 'password'; FLUSH PRIVILEGES;"
 
 # Install PHP extensions with PECL
 pecl install imagick redis swoole
 
 # Install global Composer packages
-/usr/local/bin/composer global require laravel/installer laravel/valet beyondcode/expose
+/usr/local/bin/composer global require laravel/installer laravenano .zl/valet beyondcode/expose laravel/spark-installer statamic/cli laravel/forge-cli
+
+# Install global npm packages
+$(brew --prefix)/bin/npm global @adonisjs/cli @bchatard/alfred-jetbrains @quasar/cli @vue/cli anywhere browser-sync cross-env electron-builder eslint-plugin-react eslint-plugin-vue eslint gulp imageoptim-cli laravel-echo-server ngrok nodemon tailwindcss webpack webpack-dev-server
 
 # Install Laravel Valet
 $HOME/.composer/vendor/bin/valet install
 
-# Create a Sites directory
-mkdir $HOME/Sites
+# Make Home directories
+mkdir -p $HOME/Projects
+mkdir -p $HOME/Goodies
 
-# Create sites subdirectories
-mkdir $HOME/Sites/blade-ui-kit
-mkdir $HOME/Sites/eventsauce
-mkdir $HOME/Sites/laravel
-
-# Clone Github repositories
-$DOTFILES/clone.sh
-
-# Symlink the Mackup config file to the home directory
-ln -s $DOTFILES/.mackup.cfg $HOME/.mackup.cfg
+# Symlink the Mackup config file and directory to the home directory
+ln -sf $DOTFILES/.mackup.cfg $HOME/.mackup.cfg
+ln -sf $DOTFILES/.mackup $HOME/.mackup
 
 # Set macOS preferences - we will run this last because this will reload the shell
 source $DOTFILES/.macos
+
+# Extra Steps
+echo ''
+echo Steps to perform after reboot:
+echo 1. Install iTerm Shell Integration
+echo 2. Install Drivers
+echo 3. Install Adobe Apps
+echo 4. Install Goodies Apps
+echo 5. Restore Documents / Movies from Synology
+echo 6. Restore app preferences. Run \'mackup restore\'
+echo 7. Restore Goodies. Run \'bpg -c .\'
+echo 8. Restore Projects. Run \'bp -c .\'
+echo 9. Restore database. Run \'dbrestore\'
+echo ''
