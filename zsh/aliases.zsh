@@ -6,6 +6,7 @@ alias ark="openssl des3 -salt -d -in ~/Goodies/Tools/ark"
 alias clone='mirror -c'
 alias mp='mirror -l ~/Projects/'
 alias bp='mirror -l ~/Projects/ -r /volume1/Common/Projects/ -h synology'
+alias bpc='mirror -l ~/Projects/ -r /volume1/Common/Projects/ -h synology -x -a "--exclude \"#Archive/\""' # Copy only
 alias bpg='mirror -l ~/Goodies/ -r /volume1/Common/Mac/Goodies/ -h synology'
 alias dwsync='mirror -l ~/Projects/Sites/doctorweb.gr/doctorweb/ -r www.doctorweb.gr/ -h apptime'
 alias dbbackup='mysqldump -u root --all-databases > $HOME/Goodies/Tools/localdb.sql && bpg Tools'

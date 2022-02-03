@@ -1,9 +1,9 @@
 #!/bin/bash
 #
-#	mirror 1.2
+#	mirror 1.3
 #	Description: Mirror file or folder to remote host using rsync
 #	Author: Angelos Michalopoulos
-#	Last Updated: 03/09/2018
+#	Last Updated: 02/02/2022
 #
 #	Argument List:
 #
@@ -11,6 +11,8 @@
 #	[-h hostname]	Remote Hostname
 #	[-l path]		Local Path Prefix (eg. ~/Projects/)
 #	[-r path]		Remote Path Prefix (eg. /mnt/backup/)
+#	[-a rsync_args]	Rsync Arguments (Optional)
+#	[-x]			Do not delete files on destination
 #	[-v]			Verbose Mode (Verbose and Progress of Rsync)
 #	[-n]			Simulation Mode (No Actual Sync)
 #	[-N]			Output Rsync Command Only (No Actual Sync)
@@ -20,11 +22,11 @@
 #
 
 # Known Hosts
-MAIN='Mars'
-BACKUP='Saturn'
+MAIN='Zeus'
+BACKUP='Mars'
 
 # Constants
-VERSION='1.2'
+VERSION='1.3'
 
 C0='\033[m'			# System Default Color
 C1='\033[2;38m'		# Light, Dark Green
@@ -38,8 +40,10 @@ SOURCE="$PWD/"
 DESTINATION="$PWD"
 LPREFIX=''
 RPREFIX=''
+RSYNC_ARGS=''
+RSYNC_DELETE=true
 RSYNC_FLAGS='a'
-RSYNC_OPTIONS='--itemize-changes --delete --exclude ".DS_Store" --exclude ".AppleDouble" --delete-excluded --rsh=ssh'
+RSYNC_OPTIONS='--itemize-changes --exclude ".DS_Store" --exclude ".AppleDouble" --exclude "*@SynoResource" --exclude "@eaDir" --rsh=ssh'
 RSYNC_VERBOSE=false
 RSYNC_SIMULATE=false
 RSYNC_EXIT=false
@@ -49,7 +53,7 @@ shopt -s nocasematch
 shopt -u nocasematch
 
 # Grab Passing Variables
-while getopts ch:l:r:vnNh option
+while getopts ch:l:r:a:xvnN option
 do
         case "${option}"
         in
@@ -61,10 +65,11 @@ do
 				r) RPREFIX="${OPTARG}"
 				   SOURCE=''
 				   DESTINATION='';;
+				a) RSYNC_ARGS="${OPTARG}";;
+				x) RSYNC_DELETE=false;;
 				v) RSYNC_VERBOSE=true;;
 				n) RSYNC_SIMULATE=true;;
 				N) RSYNC_EXIT=true;;
-				h) HELP=true;;
 				?) HELP=true;;
         esac
 done
@@ -98,7 +103,7 @@ echo -e "
 ██║╚██╔╝██║██║██╔══██╗██╔══██╗██║   ██║██╔══██╗
 ██║ ╚═╝ ██║██║██║  ██║██║  ██║╚██████╔╝██║  ██║  v${VERSION}
 ╚═╝     ╚═╝╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝"
-echo -e "${C1}By Angelos Michalopoulos (C) 2014-2018 IT Serve. All rights reserved.$C0"
+echo -e "${C1}By Angelos Michalopoulos (C) 2014-2022 Apptime. All rights reserved.$C0"
 
 # Help Screen
 if [ $HELP = true ]; then
@@ -108,6 +113,8 @@ Argument List:
 [-h hostname]	Remote Hostname
 [-l path]	Local Path Prefix (eg. ~/Projects/)
 [-r path]	Remote Path Prefix (eg. /mnt/backup/)
+[-a rsync_args]	Rsync Arguments (Optional)
+[-x]		Do not delete files on destination
 [-v]		Verbose Mode (Verbose and Progress of Rsync)
 [-n]		Simulation Mode (No Actual Sync)
 [-N]		Output Rsync Command Only (No Actual Sync)
@@ -133,7 +140,8 @@ echo '->' || echo '<-'` ${REMOTE%.*} ${C3}${1:-$SOURCE}${C0}"
 [ $RSYNC_SIMULATE = true ] && RSYNC_FLAGS="${RSYNC_FLAGS}n"
 
 # Prepare Rsync Command
-RSYNC="rsync -$RSYNC_FLAGS $RSYNC_OPTIONS 
+[ $RSYNC_DELETE = true ] && RSYNC_OPTIONS="${RSYNC_OPTIONS} --delete"
+RSYNC="rsync -$RSYNC_FLAGS $RSYNC_OPTIONS $RSYNC_ARGS 
 ${HOST1}\"${SOURCE}\" 
 ${HOST2}\"${DESTINATION}\""
 
