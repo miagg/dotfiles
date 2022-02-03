@@ -63,6 +63,7 @@ echo 4. Install Goodies Apps
 echo 5. Restore Documents / Movies from Synology
 echo 6. Restore app preferences. Run \'mackup restore\'
 echo 7. Restore Goodies. Run \'bpg -c .\'
-echo 8. Restore Projects. Run \'bp -c .\'
+echo 8. Restore Projects. Run \'bpc -c .\'
 echo 9. Restore database. Run \'dbrestore\'
+echo 10. Add ssh key to forge / servers
 echo ''
