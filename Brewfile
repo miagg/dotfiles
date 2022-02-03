@@ -150,6 +150,7 @@ mas 'Microsoft PowerPoint', id: 462062816
 mas 'Microsoft Remote Desktop', id: 1295203466
 mas 'Numbers', id: 409203825
 mas 'Pages', id: 409201541
+mas 'Spark', id: 1176895641
 mas 'Speedtest', id: 1153157709
 mas 'TextSniper - OCR simplified', id: 1528890965
 mas 'Transmit 5', id: 1436522307
