@@ -45,3 +45,18 @@ function db {
     fi
 }
 
+function dbsync {
+    SERVER=$(awk -F "=" '/DB_SYNC_SERVER/{print $2}' .env)
+    DB=$(awk -F "=" '/DB_SYNC_DATABASE/{print $2}' .env)
+    PASSWORD=$(awk -F "=" '/DB_SYNC_PASSWORD/{print $2}' .env)
+    if [[ -z $SERVER || -z $DB || -z $PASSWORD ]]; then
+        echo "No configuration was found on .env file"
+        return 1
+    fi
+    echo "Syncing database \"$DB\" to local database..."
+    ssh $SERVER "mysqldump -uforge -p$PASSWORD $DB 2>/dev/null | gzip -3 -c" > ~/.dbsync.sql.gz
+    gunzip -c ~/.dbsync.sql.gz | mysql -uroot $DB
+    rm -rf ~/.dbsync.sql.gz
+    echo "Done!"
+}
+
