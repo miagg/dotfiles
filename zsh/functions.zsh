@@ -57,6 +57,7 @@ function dbsync {
     ssh $SERVER "mysqldump -uforge -p$PASSWORD $DB 2>/dev/null | gzip -3 -c" > ~/.dbsync.sql.gz
     gunzip -c ~/.dbsync.sql.gz | mysql -uroot $DB
     rm -rf ~/.dbsync.sql.gz
+    php artisan cache:clear
     echo "Done!"
 }
 
