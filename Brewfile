@@ -139,7 +139,6 @@ cask 'font-source-sans-pro'
 cask 'font-source-serif-pro'
 
 # Mac App Store
-mas 'Airmail 5', id: 918858936
 mas 'EdgeCase', id: 513826860
 mas 'GarageBand', id: 682658836
 mas 'JSON Peep for Safari', id: 1458969831
