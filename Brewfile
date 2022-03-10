@@ -31,6 +31,7 @@ brew 'nano'
 brew 'ncdu'
 brew 'pkg-config' # https://github.com/driesvints/dotfiles/issues/20
 brew 'shopify-cli'
+brew 'siege'
 brew 'speedtest-cli'
 brew 'stripe/stripe-cli/stripe'
 brew 'stripe/stripe-mock/stripe-mock'
