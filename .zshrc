@@ -2,8 +2,6 @@
 export PATH="${PATH}:${HOME}/.local/bin"
 eval "$(fig init zsh pre)"
 
-
-
 # Path to your dotfiles.
 export DOTFILES=$HOME/.dotfiles
 
@@ -133,7 +131,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-
-
 # Fig post block. Keep at the bottom of this file.
 eval "$(fig init zsh post)"
+
