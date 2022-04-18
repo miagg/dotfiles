@@ -67,8 +67,9 @@ function startshare {
         return 1
     fi
     APP=${PWD##*/}
+    SECRET=${1:-opensusami}
     sed -i '' "9s/.*/\tlisten 443 ssl http2;/" ~/.config/valet/Nginx/$APP.test
-    php artisan down --secret=opensusami
+    php artisan down --secret=$SECRET
     valet restart
 }
 
