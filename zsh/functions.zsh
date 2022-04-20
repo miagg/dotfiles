@@ -61,26 +61,12 @@ function dbsync {
     echo "Done!"
 }
 
-function startshare {
+function share {
     if [ ! -f "artisan" ]; then
         echo "No laravel application was found"
         return 1
     fi
-    APP=${PWD##*/}
-    SECRET=${1:-opensusami}
-    sed -i '' "9s/.*/\tlisten 443 ssl http2;/" ~/.config/valet/Nginx/$APP.test
-    php artisan down --secret=$SECRET
-    valet restart
-}
-
-function stopshare {
-    if [ ! -f "artisan" ]; then
-        echo "No laravel application was found"
-        return 1
-    fi
-    APP=${PWD##*/}
-    sed -i '' "9s/.*/\tlisten 127.0.0.1:443 ssl http2;/" ~/.config/valet/Nginx/$APP.test
-    valet restart
-    php artisan up
+    DOMAIN=https://${PWD##*/}.test
+    ngrok http $DOMAIN --host-header rewrite
 }
 
