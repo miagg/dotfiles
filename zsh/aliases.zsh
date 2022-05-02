@@ -45,6 +45,7 @@ alias rt='npm run test'
 alias rw='npm run watch'
 alias rbs='npm run bs'
 alias rwp='npm run watch-poll'
+alias php80='/usr/local/Cellar/php@8.0/8.0.17/bin/php'
 
 # Homestead
 alias vm='pushd ~/Homestead && vagrant ssh && popd'
