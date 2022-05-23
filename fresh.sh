@@ -27,6 +27,9 @@ brew update
 brew tap homebrew/bundle
 brew bundle --file $DOTFILES/Brewfile
 
+# Start Services
+brew services start redis mysql postgresql mailhog meilisearch
+
 # Install NVM
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh

@@ -59,6 +59,7 @@ brew 'meilisearch'
 brew 'mysql'
 brew 'nginx'
 brew 'nvm'
+brew 'postgresql'
 brew 'redis'
 brew 'yarn'
 
@@ -153,4 +154,4 @@ mas 'Pages', id: 409201541
 mas 'Speedtest', id: 1153157709
 mas 'TextSniper - OCR simplified', id: 1528890965
 mas 'Transmit 5', id: 1436522307
-max 'Xcode', id: 497799835
+mas 'Xcode', id: 497799835
