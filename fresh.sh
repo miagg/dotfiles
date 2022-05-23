@@ -27,6 +27,13 @@ brew update
 brew tap homebrew/bundle
 brew bundle --file $DOTFILES/Brewfile
 
+# Install NVM
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+nvm ls-remote --lts
+nvm install --lts
+nvm use --lts
+
 # Set default MySQL root password and auth type
 #mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY 'password'; FLUSH PRIVILEGES;"
 
@@ -34,10 +41,10 @@ brew bundle --file $DOTFILES/Brewfile
 pecl install imagick redis swoole
 
 # Install global Composer packages
-/usr/local/bin/composer global require laravel/installer laravenano .zl/valet beyondcode/expose laravel/spark-installer statamic/cli laravel/forge-cli
+composer global require laravel/installer laravenano .zl/valet beyondcode/expose laravel/spark-installer statamic/cli laravel/forge-cli
 
 # Install global npm packages
-$(brew --prefix)/bin/npm global @adonisjs/cli @bchatard/alfred-jetbrains @quasar/cli @vue/cli anywhere browser-sync cross-env electron-builder eslint-plugin-react eslint-plugin-vue eslint gulp imageoptim-cli laravel-echo-server ngrok nodemon tailwindcss webpack webpack-dev-server
+npm i -g @adonisjs/cli @bchatard/alfred-jetbrains @quasar/cli @vue/cli anywhere browser-sync cross-env electron-builder eslint-plugin-react eslint-plugin-vue eslint gulp imageoptim-cli laravel-echo-server ngrok nodemon tailwindcss webpack webpack-dev-server
 
 # Install Laravel Valet
 $HOME/.composer/vendor/bin/valet install

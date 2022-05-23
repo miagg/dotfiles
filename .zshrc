@@ -19,6 +19,8 @@ POWERLEVEL9K_MODE="nerdfont-complete"
 export CLICOLOR=1
 export GREP_OPTIONS='--color=auto'
 export EDITOR='code -w'
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
