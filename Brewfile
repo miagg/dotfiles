@@ -27,6 +27,7 @@ brew 'htop'
 brew 'httpie'
 brew 'mackup'
 brew 'mas' # Mac App Store manager
+brew 'lnav'
 brew 'nano'
 brew 'ncdu'
 brew 'pkg-config' # https://github.com/driesvints/dotfiles/issues/20
