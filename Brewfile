@@ -35,7 +35,6 @@ brew 'shopify-cli'
 brew 'siege'
 brew 'speedtest-cli'
 brew 'stripe/stripe-cli/stripe'
-brew 'stripe/stripe-mock/stripe-mock'
 brew 'svn' # Needed to install fonts
 brew 'testdisk'
 brew 'tmux'

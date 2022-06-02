@@ -5,6 +5,7 @@ echo "Setting up your Mac..."
 # Check for Oh My Zsh and install if we don't have it
 if test ! $(which omz); then
   /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/HEAD/tools/install.sh)"
+  export DOTFILES=$HOME/.dotfiles
 fi
 
 # Check for Homebrew and install if we don't have it
@@ -28,7 +29,11 @@ brew tap homebrew/bundle
 brew bundle --file $DOTFILES/Brewfile
 
 # Start Services
-brew services start redis mysql postgresql mailhog meilisearch
+brew services start redis
+brew services start mysql
+brew services start postgresql
+brew services start mailhog
+brew services start meilisearch
 
 # Install NVM
 export NVM_DIR=~/.nvm
@@ -41,16 +46,17 @@ nvm use --lts
 #mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY ''; FLUSH PRIVILEGES;"
 
 # Install PHP extensions with PECL
-pecl install imagick redis swoole
+#pecl install imagick redis swoole
 
 # Install global Composer packages
 composer global require laravel/installer laravel/valet laravel/spark-installer friendsofphp/php-cs-fixer beyondcode/expose statamic/cli laravel/forge-cli
 
 # Install global npm packages
-npm i -g @adonisjs/cli @bchatard/alfred-jetbrains @quasar/cli @vue/cli anywhere browser-sync cross-env electron-builder eslint-plugin-react eslint-plugin-vue eslint gulp imageoptim-cli laravel-echo-server ngrok nodemon tailwindcss webpack webpack-dev-server
+npm i -g @adonisjs/cli @quasar/cli @vue/cli anywhere browser-sync cross-env electron-builder eslint-plugin-react eslint-plugin-vue eslint gulp imageoptim-cli laravel-echo-server ngrok nodemon tailwindcss webpack webpack-dev-server
 
 # Install Laravel Valet
 $HOME/.composer/vendor/bin/valet install
+$HOME/.composer/vendor/bin/valet trust
 
 # Make Home directories
 mkdir -p $HOME/Projects
