@@ -38,13 +38,13 @@ nvm install --lts
 nvm use --lts
 
 # Set default MySQL root password and auth type
-#mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY 'password'; FLUSH PRIVILEGES;"
+#mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY ''; FLUSH PRIVILEGES;"
 
 # Install PHP extensions with PECL
 pecl install imagick redis swoole
 
 # Install global Composer packages
-composer global require laravel/installer laravenano .zl/valet beyondcode/expose laravel/spark-installer statamic/cli laravel/forge-cli
+composer global require laravel/installer laravel/valet laravel/spark-installer friendsofphp/php-cs-fixer beyondcode/expose statamic/cli laravel/forge-cli
 
 # Install global npm packages
 npm i -g @adonisjs/cli @bchatard/alfred-jetbrains @quasar/cli @vue/cli anywhere browser-sync cross-env electron-builder eslint-plugin-react eslint-plugin-vue eslint gulp imageoptim-cli laravel-echo-server ngrok nodemon tailwindcss webpack webpack-dev-server
