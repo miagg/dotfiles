@@ -8,6 +8,12 @@ if test ! $(which omz); then
   export DOTFILES=$HOME/.dotfiles
 fi
 
+# Check for fzf and install if we don't have it
+if test ! $(which fzf); then
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+  ~/.fzf/install
+fi
+
 # Check for Homebrew and install if we don't have it
 if test ! $(which brew); then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"

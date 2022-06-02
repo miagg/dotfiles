@@ -41,6 +41,7 @@ If you did all of the above you may now follow these install instructions to set
 
    ```zsh
    git clone git@github.com:miagg/dotfiles.git ~/.dotfiles
+   cd ~/.dotfiles && git submodule update --init && cd ~
    ```
 
 4. Run the installation with:
