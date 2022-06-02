@@ -91,7 +91,6 @@ plugins=(
   git 
   composer 
   macos
-  fzf
   zsh-autosuggestions 
   zsh-syntax-highlighting
 )
@@ -120,6 +119,7 @@ fi
 export SSH_KEY_PATH="~/.ssh/id_ed25519"
 
 # Integrations
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
