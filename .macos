@@ -22,10 +22,11 @@ sudo rm -rf /etc/nsmb.conf
 sudo ln -sf $HOME/.dotfiles/conf/nsmb.conf /etc/nsmb.conf
 
 # Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName "Zeus"
-sudo scutil --set HostName "Zeus"
-sudo scutil --set LocalHostName "Zeus"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "Zeus"
+HOSTNAME="${HOSTNAME:=Zeus}"
+sudo scutil --set ComputerName $HOSTNAME
+sudo scutil --set HostName $HOSTNAME
+sudo scutil --set LocalHostName $HOSTNAME
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $HOSTNAME
 
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
