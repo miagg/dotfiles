@@ -48,6 +48,7 @@ If you did all of the above you may now follow these install instructions to set
 
    ```zsh
    xcode-select --install
+   export HOSTNAME=computer_name
    ~/.dotfiles/fresh.sh
    ```
 
