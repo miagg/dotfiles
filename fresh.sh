@@ -25,7 +25,7 @@ fi
 # Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
 rm -rf $HOME/{.zshrc,.gitignore}
 ln -sf $HOME/.dotfiles/.zshrc $HOME/.zshrc
-ln -sf $HOME/.dotfiles/.gitignore $HOME/.gitignore_global
+ln -sf $HOME/.dotfiles/.gitignore_global $HOME/.gitignore
 
 # Update Homebrew recipes
 brew update
