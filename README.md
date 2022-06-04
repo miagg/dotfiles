@@ -47,7 +47,6 @@ If you did all of the above you may now follow these install instructions to set
 4. Run the installation with:
 
    ```zsh
-   xcode-select --install
    export HOSTNAME=computer_name
    ~/.dotfiles/fresh.sh
    ```
