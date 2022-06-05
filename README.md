@@ -47,6 +47,7 @@ If you did all of the above you may now follow these install instructions to set
 4. Run the installation with:
 
    ```zsh
+   sudo xcodebuild -license accept
    export HOSTNAME=computer_name
    ~/.dotfiles/fresh.sh
    ```

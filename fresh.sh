@@ -18,7 +18,7 @@ fi
 if test ! $(which brew); then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.zprofile
+  echo 'eval "$(brew shellenv)"' >> $HOME/.zprofile
 fi
 
 # Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
@@ -83,9 +83,10 @@ echo 3. Restore Documents / Movies from Synology
 echo 4. Install Drivers
 echo 5. Install Adobe Apps
 echo 6. Install Goodies Apps
-echo 7. Restore Goodies. Run \'bpg -c .\'
-echo 8. Restore Projects. Run \'bpc -c .\'
-echo 9. Restore database. Run \'dbrestore\'
-echo 10. Restore app preferences. Run \'mackup restore\'
-echo 11. Manually configure Dropshare F-Bar, Fork, IconJar, IINA, Jdownloader2, Logi Options, Mitti, Typora, Valet
+echo 7. Install Xcode
+echo 8. Restore Goodies. Run \'bpg -c .\'
+echo 9. Restore Projects. Run \'bpc -c .\'
+echo 10. Restore database. Run \'dbrestore\'
+echo 11. Restore app preferences. Run \'mackup restore\'
+echo 12. Manually configure Dropshare F-Bar, Fork, IconJar, IINA, Jdownloader2, Logi Options, Mitti, Typora, Valet
 echo ''

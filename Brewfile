@@ -5,6 +5,7 @@ tap 'homebrew/cask-fonts'
 tap 'homebrew/cask-versions'
 tap 'homebrew/cask-drivers'
 tap 'homebrew/bundle'
+tap 'homebrew/services'
 tap 'nicoverbruggen/homebrew-cask'
 tap 'shopify/shopify'
 tap 'stripe/stripe-cli'
@@ -152,4 +153,3 @@ mas 'Pages', id: 409201541
 mas 'Speedtest', id: 1153157709
 mas 'TextSniper - OCR simplified', id: 1528890965
 mas 'Transmit 5', id: 1436522307
-mas 'Xcode', id: 497799835
