@@ -77,16 +77,16 @@ source $DOTFILES/.macos
 # Extra Steps
 echo ''
 echo Steps to perform after reboot:
-echo 1. Add ssh key to forge / servers
-echo 2. Install iTerm Shell Integration
-echo 3. Restore Documents / Movies from Synology
-echo 4. Install Drivers
-echo 5. Install Adobe Apps
-echo 6. Install Goodies Apps
-echo 7. Install Xcode
-echo 8. Restore Goodies. Run \'bpg -c .\'
-echo 9. Restore Projects. Run \'bpc -c .\'
-echo 10. Restore database. Run \'dbrestore\'
-echo 11. Restore app preferences. Run \'mackup restore\'
+echo 1. Install iTerm Shell Integration
+echo 2. Restore app preferences. Run \'mackup restore\'
+echo 3. Add ssh key to forge / servers
+echo 4. Restore Documents / Movies from Synology
+echo 5. Restore Goodies. Run \'bpg -c .\'
+echo 6. Restore Projects. Run \'bpc -c .\'
+echo 7. Restore database. Run \'dbrestore\'
+echo 8. Install Drivers
+echo 9. Install Adobe Apps
+echo 10. Install Goodies Apps
+echo 11. Install Xcode
 echo 12. Manually configure Dropshare F-Bar, Fork, IconJar, IINA, Jdownloader2, Logi Options, Mitti, Typora, Valet
 echo ''
