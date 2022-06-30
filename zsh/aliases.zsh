@@ -24,6 +24,9 @@ alias c="clear"
 alias compile="commit 'compile'"
 alias version="commit 'version'"
 
+# Manage servers
+alias syn="ssh syn"
+
 # Directories
 alias dotfiles="cd $DOTFILES"
 alias library="cd $HOME/Library"
