@@ -14,6 +14,7 @@ tap 'stripe/stripe-cli'
 brew 'awscli'
 brew 'bash' # Latest Bash version
 brew 'b2-tools'
+brew 'cloudflare/cloudflare/cloudflared'
 brew 'coreutils' # Those that come with macOS are outdated
 brew 'doctl'
 brew 'figlet'
@@ -67,7 +68,6 @@ brew 'yarn'
 
 # Apps
 cask 'adobe-creative-cloud'
-cask 'alfred'
 cask 'anydesk'
 cask 'audio-hijack'
 cask 'authy'
@@ -109,6 +109,7 @@ cask 'post-haste'
 cask 'quicktime-player7'
 cask 'radio-silence'
 cask 'ray'
+cask 'raycast'
 cask 'skype'
 cask 'skype-for-business'
 cask 'slack'
