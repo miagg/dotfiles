@@ -19,7 +19,7 @@ alias ttfb="curl -s -w '\nLookup time:\t\t%{time_namelookup}\nConnect time:\t\t%
 alias ls="$(brew --prefix coreutils)/libexec/gnubin/ls -N --color --group-directories-first"
 alias ll="$(brew --prefix coreutils)/libexec/gnubin/ls -AhlFNo --color --group-directories-first"
 alias lscon="lsof -i +c 40 -P | grep ESTABLISHED | awk -v OFS='\t' '{print \$1, \$8, \$9}'"
-alias lsserv="lsof -i +c 40 -P | grep LISTEN | awk -v OFS='\t' '{print \$1, \$8, \$9}'"
+alias lsports="lsof -i +c 40 -P | grep LISTEN | awk -v OFS='\t' '{print \$1, \$8, \$9}'"
 alias phpstorm='open -a /Applications/PhpStorm.app "`pwd`"'
 alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
 alias c="clear"
