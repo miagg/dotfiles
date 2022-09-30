@@ -67,7 +67,6 @@ brew 'redis'
 brew 'yarn'
 
 # Apps
-cask 'adobe-creative-cloud'
 cask 'anydesk'
 cask 'audio-hijack'
 cask 'authy'
