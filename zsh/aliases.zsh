@@ -25,6 +25,7 @@ alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
 alias c="clear"
 alias compile="commit 'compile'"
 alias version="commit 'version'"
+alias nodeinspect="ssh -nNTL 9229:localhost:9229"
 
 # Manage servers
 alias syn="ssh syn"
