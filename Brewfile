@@ -42,6 +42,7 @@ brew 'stripe/stripe-cli/stripe'
 brew 'svn' # Needed to install fonts
 brew 'testdisk'
 brew 'tmux'
+brew 'wget'
 brew 'wp-cli'
 brew 'youtube-dl'
 
