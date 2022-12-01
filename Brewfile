@@ -36,6 +36,7 @@ brew 'ncdu'
 brew 'pkg-config' # https://github.com/driesvints/dotfiles/issues/20
 brew 'shellcheck'
 brew 'shopify-cli'
+brew 'shutter-encoder'
 brew 'siege'
 brew 'speedtest-cli'
 brew 'stripe/stripe-cli/stripe'
