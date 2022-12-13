@@ -46,9 +46,9 @@ function db {
 }
 
 function dbsync {
-    SERVER=$(awk -F "=" '/DB_SYNC_SERVER/{print $2}' .env)
-    DB=$(awk -F "=" '/DB_SYNC_DATABASE/{print $2}' .env)
-    PASSWORD=$(awk -F "=" '/DB_SYNC_PASSWORD/{print $2}' .env)
+    SERVER=$(awk -F "=" '/SYNC_DB_SERVER/{print $2}' .env)
+    DB=$(awk -F "=" '/SYNC_DB_DATABASE/{print $2}' .env)
+    PASSWORD=$(awk -F "=" '/SYNC_DB_PASSWORD/{print $2}' .env)
     if [[ -z $SERVER || -z $DB || -z $PASSWORD ]]; then
         echo "No configuration was found on .env file"
         return 1
