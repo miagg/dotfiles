@@ -49,6 +49,7 @@ alias rd='npm run dev'
 alias rp='npm run prod'
 alias rt='npm run test'
 alias rw='npm run watch'
+alias rb='npm run build'
 alias rbs='npm run bs'
 alias rwp='npm run watch-poll'
 alias php80="$HOMEBREW_PREFIX/opt/php@8.0/bin/php"
