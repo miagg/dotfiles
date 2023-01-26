@@ -70,3 +70,7 @@ function share {
     ngrok http $DOMAIN --host-header rewrite
 }
 
+function clink {
+    composer config repositories.local '{"type": "path", "url": "'$1'"}' --file composer.json
+}
+
