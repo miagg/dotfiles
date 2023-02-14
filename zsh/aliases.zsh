@@ -26,6 +26,7 @@ alias c="clear"
 alias compile="commit 'compile'"
 alias version="commit 'version'"
 alias nodeinspect="ssh -nNTL 9229:localhost:9229"
+alias pt="papertrail"
 
 # Manage servers
 alias syn="ssh syn"
