@@ -164,3 +164,4 @@ mas 'Pages', id: 409201541
 mas 'Speedtest', id: 1153157709
 mas 'TextSniper - OCR simplified', id: 1528890965
 mas 'Transmit 5', id: 1436522307
+mas 'WireGuard', id: 1451685025
