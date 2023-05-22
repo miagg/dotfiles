@@ -27,6 +27,7 @@ alias compile="commit 'compile'"
 alias version="commit 'version'"
 alias nodeinspect="ssh -nNTL 9229:localhost:9229"
 alias pt="papertrail"
+alias vim="nvim"
 
 # Manage servers
 alias syn="ssh syn"
@@ -37,6 +38,7 @@ alias library="cd $HOME/Library"
 alias sites="cd $HOME/Sites"
 
 # Laravel
+alias a="php artisan"
 alias art="php artisan"
 alias fresh="php artisan migrate:fresh --seed"
 alias seed="php artisan db:seed"
@@ -51,6 +53,7 @@ alias rp='npm run prod'
 alias rt='npm run test'
 alias rw='npm run watch'
 alias rb='npm run build'
+alias rst='npm run start'
 alias rbs='npm run bs'
 alias rwp='npm run watch-poll'
 alias php80="$HOMEBREW_PREFIX/opt/php@8.0/bin/php"
