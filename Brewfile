@@ -31,10 +31,13 @@ brew 'htop'
 brew 'httpie'
 brew 'mackup'
 brew 'mas' # Mac App Store manager
+brew 'k6'
 brew 'lnav'
 brew 'nano'
 brew 'ncdu'
+brew 'neovim'
 brew 'pkg-config' # https://github.com/driesvints/dotfiles/issues/20
+brew 'pgsync'
 brew 'shellcheck'
 brew 'shopify-cli'
 brew 'shutter-encoder'
