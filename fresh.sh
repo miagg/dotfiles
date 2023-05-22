@@ -47,6 +47,9 @@ nvm ls-remote --lts
 nvm install --lts
 nvm use --lts
 
+# Install NvChad (Neovim)
+git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
+
 # Set default MySQL root password and auth type
 #mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY ''; FLUSH PRIVILEGES;"
 
