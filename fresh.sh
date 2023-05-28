@@ -92,4 +92,5 @@ echo 9. Install Adobe Apps
 echo 10. Install Goodies Apps
 echo 11. Install Xcode
 echo 12. Manually configure Dropshare F-Bar, Fork, IconJar, IINA, Jdownloader2, Logi Options, Mitti, Typora, Valet
+echo 13. Import GPG key for password-store
 echo ''
