@@ -89,6 +89,7 @@ plugins=(
   git 
   composer 
   macos
+  pass
   zsh-autosuggestions 
   zsh-syntax-highlighting
 )
