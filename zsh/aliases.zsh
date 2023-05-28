@@ -28,6 +28,7 @@ alias version="commit 'version'"
 alias nodeinspect="ssh -nNTL 9229:localhost:9229"
 alias pt="papertrail"
 alias vim="nvim"
+alias pc="pass show -c"
 
 # Manage servers
 alias syn="ssh syn"
