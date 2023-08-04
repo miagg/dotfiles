@@ -19,3 +19,4 @@ export PATH="$PATH:/Users/wolfkain/.bin"
 # export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 
 export PATH="/usr/local/sbin:$PATH"
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
