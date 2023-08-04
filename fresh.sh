@@ -72,7 +72,7 @@ mkdir -p $HOME/Goodies
 
 # Symlink the Mackup config file and directory to the home directory
 ln -sf $DOTFILES/.mackup.cfg $HOME/.mackup.cfg
-ln -sf $DOTFILES/.mackup $HOME/.mackup
+cp $DOTFILES/.mackup/*.cfg $HOME/.mackup
 
 # Set macOS preferences - we will run this last because this will reload the shell
 source $DOTFILES/.macos
