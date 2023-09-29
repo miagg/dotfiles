@@ -60,7 +60,7 @@ git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
 composer global require laravel/installer laravel/valet laravel/spark-installer friendsofphp/php-cs-fixer beyondcode/expose statamic/cli laravel/forge-cli
 
 # Install global npm packages
-npm i -g @adonisjs/cli @quasar/cli @vue/cli anywhere browser-sync cross-env electron-builder eslint-plugin-react eslint-plugin-vue eslint gulp imageoptim-cli laravel-echo-server ngrok nodemon tailwindcss webpack webpack-dev-server
+npm i -g @adonisjs/cli @vue/cli anywhere browser-sync cross-env electron-builder eslint-plugin-react eslint-plugin-vue eslint gulp imageoptim-cli laravel-echo-server ngrok nodemon tailwindcss webpack webpack-dev-server @soketi/soketi @githubnext/github-copilot-cli
 
 # Install Laravel Valet
 $HOME/.composer/vendor/bin/valet install
