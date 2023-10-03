@@ -58,7 +58,6 @@ alias rb='npm run build'
 alias rst='npm run start'
 alias rbs='npm run bs'
 alias rwp='npm run watch-poll'
-alias php80="$HOMEBREW_PREFIX/opt/php@8.0/bin/php"
 
 # Homestead
 alias vm='pushd ~/Homestead && vagrant ssh && popd'
