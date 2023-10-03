@@ -139,7 +139,6 @@ cask 'font-source-serif-pro'
 # Mac App Store
 mas 'EdgeCase', id: 513826860
 mas 'GarageBand', id: 682658836
-mas 'JSON Peep for Safari', id: 1458969831
 mas 'Keynote', id: 409183694
 mas 'Magnet', id: 441258766
 mas 'Microsoft Word', id: 462054704
