@@ -26,6 +26,9 @@ rm -rf $HOME/{.zshrc,.gitignore}
 ln -sf $HOME/.dotfiles/.zshrc $HOME/.zshrc
 ln -sf $HOME/.dotfiles/.gitignore_global $HOME/.gitignore
 
+# Clone backup
+git clone git@github.com:miagg/backup.git $HOME/.backup
+
 # Update Homebrew recipes
 brew update
 
@@ -71,7 +74,7 @@ mkdir -p $HOME/Projects
 mkdir -p $HOME/Goodies
 
 # Symlink the Mackup config file and directory to the home directory
-ln -sf $DOTFILES/.mackup.cfg $HOME/.mackup.cfg
+cp $DOTFILES/.mackup.cfg $HOME/.mackup.cfg
 cp $DOTFILES/.mackup/*.cfg $HOME/.mackup
 
 # Set macOS preferences - we will run this last because this will reload the shell
