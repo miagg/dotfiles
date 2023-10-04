@@ -135,3 +135,12 @@ eval "$(github-copilot-cli alias -- "$0")"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Herd injected PHP 8.2 configuration.
+export HERD_PHP_82_INI_SCAN_DIR="/Users/wolfkain/Library/Application Support/Herd/config/php/82/"
+
+# Herd injected PHP binary.
+export PATH="/Users/wolfkain/Library/Application Support/Herd/bin/":$PATH
+
+# Herd injected PHP 8.0 configuration.
+export HERD_PHP_80_INI_SCAN_DIR="/Users/wolfkain/Library/Application Support/Herd/config/php/80/"

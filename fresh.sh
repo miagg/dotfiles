@@ -26,9 +26,6 @@ rm -rf $HOME/{.zshrc,.gitignore}
 ln -sf $HOME/.dotfiles/.zshrc $HOME/.zshrc
 ln -sf $HOME/.dotfiles/.gitignore_global $HOME/.gitignore
 
-# Clone backup
-git clone git@github.com:miagg/backup.git $HOME/.backup
-
 # Update Homebrew recipes
 brew update
 
@@ -37,9 +34,6 @@ brew tap homebrew/bundle
 brew bundle --file $DOTFILES/Brewfile
 
 # Start Services
-brew services start redis
-brew services start mysql
-brew services start postgresql
 brew services start mailhog
 brew services start meilisearch
 
@@ -60,14 +54,14 @@ git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
 #pecl install imagick redis swoole
 
 # Install global Composer packages
-composer global require laravel/installer laravel/valet laravel/spark-installer friendsofphp/php-cs-fixer beyondcode/expose statamic/cli laravel/forge-cli
+composer global require friendsofphp/php-cs-fixer beyondcode/expose statamic/cli laravel/forge-cli
 
 # Install global npm packages
-npm i -g @adonisjs/cli @vue/cli anywhere browser-sync cross-env electron-builder eslint-plugin-react eslint-plugin-vue eslint gulp imageoptim-cli laravel-echo-server ngrok nodemon tailwindcss webpack webpack-dev-server @soketi/soketi @githubnext/github-copilot-cli
+npm i -g browser-sync ngrok @soketi/soketi @githubnext/github-copilot-cli
 
 # Install Laravel Valet
-$HOME/.composer/vendor/bin/valet install
-$HOME/.composer/vendor/bin/valet trust
+# $HOME/.composer/vendor/bin/valet install
+# $HOME/.composer/vendor/bin/valet trust
 
 # Make Home directories
 mkdir -p $HOME/Projects

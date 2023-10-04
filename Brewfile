@@ -60,13 +60,10 @@ brew 'svgo'
 brew 'gifsicle'
 
 # Development
-brew 'composer'
 brew 'imagemagick'
 brew 'mailpit'
 brew 'meilisearch'
 brew 'nvm'
-brew 'postgresql'
-brew 'redis'
 brew 'yarn'
 
 # Apps
