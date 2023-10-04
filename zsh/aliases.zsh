@@ -30,6 +30,8 @@ alias pt="papertrail"
 alias vim="nvim"
 alias pc="pass show -c1"
 alias pc2="pass show -c2"
+alias backup="mackup -f backup && mackup -f uninstall && bpg Tools"
+alias restore="bpg -c Tools && mackup -f restore && mackup -f uninstall"
 
 # Manage servers
 alias syn="ssh syn"
