@@ -25,3 +25,4 @@ export PATH="$HOMEBREW_PREFIX/opt/libpq/bin:$PATH"
 export PATH=/Users/Shared/DBngin/postgresql/15.1/bin:$PATH
 export PATH=/Users/Shared/DBngin/mysql/8.0.33/bin:$PATH
 export PATH=/Users/Shared/DBngin/redis/7.0.0/bin:$PATH
+export MYSQL_UNIX_PORT=/tmp/mysql_3306.sock
