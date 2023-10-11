@@ -11,6 +11,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
+echo 'export PATH="/opt/homebrew/bin:$PATH"' >> $HOME/.zprofile
 echo 'eval "$(brew shellenv)"' >> $HOME/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 

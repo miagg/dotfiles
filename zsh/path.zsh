@@ -19,7 +19,6 @@ export PATH="$PATH:/Users/wolfkain/.bin"
 # export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 
 export PATH="/usr/local/sbin:$PATH"
-export PATH="/opt/homebrew/bin:$PATH"
 export PATH="$HOMEBREW_PREFIX/opt/libpq/bin:$PATH"
 
 # Add Database binaries to path
