@@ -29,7 +29,7 @@ brew tap homebrew/bundle
 brew bundle --file $DOTFILES/Brewfile
 
 # Start Services
-brew services start mailhog
+brew services start mailpit
 brew services start meilisearch
 
 # Install NVM
@@ -47,9 +47,6 @@ git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
 
 # Install PHP extensions with PECL
 #pecl install imagick redis swoole
-
-# Install global Composer packages
-composer global require friendsofphp/php-cs-fixer beyondcode/expose statamic/cli laravel/forge-cli
 
 # Install global npm packages
 npm i -g browser-sync ngrok @soketi/soketi @githubnext/github-copilot-cli
@@ -85,4 +82,5 @@ echo 10. Install Goodies Apps
 echo 11. Install Xcode
 echo 12. Manually configure Dropshare F-Bar, Fork, IconJar, IINA, Jdownloader2, Logi Options, Mitti, Typora, Valet
 echo 13. Import GPG key for password-store
+echo 14. Install composer packages. Run \'composer global require friendsofphp/php-cs-fixer beyondcode/expose statamic/cli laravel/forge-cli\'
 echo ''
