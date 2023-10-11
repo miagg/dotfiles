@@ -29,7 +29,7 @@ brew 'iproute2mac'
 brew 'heroku'
 brew 'htop'
 brew 'httpie'
-brew 'mackup'
+# brew 'mackup'
 brew 'mas' # Mac App Store manager
 brew 'k6'
 brew 'lnav'
