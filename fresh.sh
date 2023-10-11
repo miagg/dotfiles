@@ -2,26 +2,20 @@
 
 echo "Setting up your Mac..."
 
-# Check for Oh My Zsh and install if we don't have it
-if test ! $(which omz); then
-  /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/HEAD/tools/install.sh)"
-  export DOTFILES=$HOME/.dotfiles
-fi
+# Install Oh My Zsh, FZF, Homebrew and Rosetta
+/bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/HEAD/tools/install.sh)"
+export DOTFILES=$HOME/.dotfiles
 
-# Check for fzf and install if we don't have it
-if test ! $(which fzf); then
-  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-  ~/.fzf/install
-fi
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
 
-# Check for Homebrew and install if we don't have it
-if test ! $(which brew); then
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-  echo 'eval "$(brew shellenv)"' >> $HOME/.zprofile
-fi
+echo 'eval "$(brew shellenv)"' >> $HOME/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
+sudo softwareupdate --install-rosetta
+
 rm -rf $HOME/{.zshrc,.gitignore}
 ln -sf $HOME/.dotfiles/.zshrc $HOME/.zshrc
 ln -sf $HOME/.dotfiles/.gitignore_global $HOME/.gitignore
