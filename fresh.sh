@@ -78,7 +78,7 @@ source $DOTFILES/.macos
 echo ''
 echo Steps to perform after reboot:
 echo 1. Install iTerm Shell Integration
-echo 2. Restore app preferences. Run \'mackup restore\'
+echo 2. Restore app preferences. Run \'restore\'
 echo 3. Add ssh key to forge / servers
 echo 4. Restore Documents / Movies from Synology
 echo 5. Restore Goodies. Run \'bpg -c .\'

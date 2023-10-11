@@ -1,0 +1,80 @@
+.authy.json
+.aws/config
+.aws/credentials
+.bash_profile
+.bashrc
+.cloudflared/cert.pem
+.composer/auth.json
+.composer/composer.json
+.composer/config.json
+.config/filezilla/filezilla.xml
+.config/filezilla/layout.xml
+.config/filezilla/sitemanager.xml
+.config/htop/htoprc
+.config/karabiner/assets/complex_modifications/1678012153.json
+.config/karabiner/automatic_backups/karabiner_20230305.json
+.config/karabiner/karabiner.json
+.config/mpv/mpv.conf
+.config/nvim/init.lua
+.config/nvim/lua/core/
+.config/nvim/lua/custom/
+.config/nvim/lua/plugins/configs/
+.config/nvim/lua/plugins/init.lua
+.config/psysh/config.php
+.config/rclone/rclone.conf
+.gitconfig
+.gnupg/gpg-agent.conf
+.gnupg/gpg.conf
+.gnupg/trustdb.gpg
+.myclirc
+.nanorc
+.netrc
+.profile
+.ssh/authorized_keys
+.ssh/config
+.SwitchHosts/data/collection/hosts/
+.tmux.conf
+.vimrc
+.warp/keybindings.yaml
+.warp/themes/vs_code.yaml
+.wget-hsts
+.yarnrc
+.z
+.zsh_history
+Library/Application Support/Audio Hijack 4/
+Library/Application Support/abnerworks.Typora/themes/
+Library/Application Support/Bartender/Bartender.BartenderPreferences/ShowForUpdates/
+Library/Application Support/Code/User/keybindings.json
+Library/Application Support/Code/User/settings.json
+Library/Application Support/Code/User/snippets/css.json
+Library/Application Support/Code/User/snippets/php.json
+Library/Application Support/com.DanPristupov.Fork/custom-commands.json
+Library/Application Support/com.tinyapp.TablePlus/Cache/Favorite/Clear Stripe IDS.sql
+Library/Application Support/com.tinyapp.TablePlus/Cache/Favorite/Directus ESG Tireses Update Preset.sql
+Library/Application Support/com.tinyapp.TablePlus/Cache/Favorite/Directus ESG Tiresias Insert Presets.sql
+Library/Application Support/com.tinyapp.TablePlus/Data/ConnectionGroups.plist
+Library/Application Support/com.tinyapp.TablePlus/Data/Connections.plist
+Library/Application Support/Loopback/Devices.plist
+Library/Application Support/obs-studio/basic/profiles/
+Library/Application Support/obs-studio/basic/scenes/
+Library/Application Support/obs-studio/global.ini
+Library/Application Support/Transmit/Favorites/Favorites.syncdata
+Library/Application Support/Transmit/Favorites/Favorites.xml
+Library/Preferences/com.adobe.Photoshop.plist
+Library/Preferences/com.bjango.istatmenus.plist
+Library/Preferences/com.bjango.istatmenus.status.plist
+Library/Preferences/com.bjango.istatmenus6.extras.plist
+Library/Preferences/com.colliderli.iina.plist
+Library/Preferences/com.crowdcafe.windowmagnet.plist
+Library/Preferences/com.DanPristupov.Fork.plist
+Library/Preferences/com.googlecode.iterm2.plist
+Library/Preferences/com.jetbrains.PhpStorm.plist
+Library/Preferences/com.logitech.manager.setting.ffff.plist
+Library/Preferences/com.obsproject.obs-studio.plist
+Library/Preferences/com.panic.Transmit.plist
+Library/Preferences/com.raycast.macos.plist
+Library/Preferences/com.rogueamoeba.Loopback.plist
+Library/Preferences/com.surteesstudios.Bartender.plist
+Library/Preferences/com.tinyapp.TablePlus.plist
+Library/Preferences/org.m0k.transmission.plist
+Library/Preferences/org.videolan.vlc.plist
