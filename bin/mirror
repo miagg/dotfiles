@@ -1,9 +1,9 @@
 #!/bin/bash
 #
-#	mirror 1.3
+#	mirror 1.4
 #	Description: Mirror file or folder to remote host using rsync
 #	Author: Angelos Michalopoulos
-#	Last Updated: 02/02/2022
+#	Last Updated: 12/10/2023
 #
 #	Argument List:
 #
@@ -13,6 +13,7 @@
 #	[-r path]		Remote Path Prefix (eg. /mnt/backup/)
 #	[-a rsync_args]	Rsync Arguments (Optional)
 #	[-x]			Do not delete files on destination
+#   [-e]            Exclude 'node_modules' and 'vendor' folders
 #	[-v]			Verbose Mode (Verbose and Progress of Rsync)
 #	[-n]			Simulation Mode (No Actual Sync)
 #	[-N]			Output Rsync Command Only (No Actual Sync)
@@ -26,7 +27,7 @@ MAIN='Zeus'
 BACKUP='Mars'
 
 # Constants
-VERSION='1.3'
+VERSION='1.4'
 
 C0='\033[m'			# System Default Color
 C1='\033[2;38m'		# Light, Dark Green
@@ -42,8 +43,9 @@ LPREFIX=''
 RPREFIX=''
 RSYNC_ARGS=''
 RSYNC_DELETE=true
+RSYNC_EXCLUDE=false
 RSYNC_FLAGS='a'
-RSYNC_OPTIONS='--itemize-changes --exclude ".DS_Store" --exclude ".AppleDouble" --exclude "*@SynoResource" --exclude "@eaDir" --rsh=ssh'
+RSYNC_OPTIONS='--itemize-changes --rsh=ssh --exclude ".DS_Store" --exclude ".AppleDouble" --exclude "*@SynoResource" --exclude "@eaDir"'
 RSYNC_VERBOSE=false
 RSYNC_SIMULATE=false
 RSYNC_EXIT=false
@@ -53,7 +55,7 @@ shopt -s nocasematch
 shopt -u nocasematch
 
 # Grab Passing Variables
-while getopts ch:l:r:a:xvnN option
+while getopts ch:l:r:a:xevnN option
 do
         case "${option}"
         in
@@ -67,6 +69,7 @@ do
 				   DESTINATION='';;
 				a) RSYNC_ARGS="${OPTARG}";;
 				x) RSYNC_DELETE=false;;
+				e) RSYNC_EXCLUDE=true;;
 				v) RSYNC_VERBOSE=true;;
 				n) RSYNC_SIMULATE=true;;
 				N) RSYNC_EXIT=true;;
@@ -115,6 +118,7 @@ Argument List:
 [-r path]	Remote Path Prefix (eg. /mnt/backup/)
 [-a rsync_args]	Rsync Arguments (Optional)
 [-x]		Do not delete files on destination
+[-e]		Exclude 'node_modules' and 'vendor' folders
 [-v]		Verbose Mode (Verbose and Progress of Rsync)
 [-n]		Simulation Mode (No Actual Sync)
 [-N]		Output Rsync Command Only (No Actual Sync)
@@ -140,6 +144,7 @@ echo '->' || echo '<-'` ${REMOTE%.*} ${C3}${1:-$SOURCE}${C0}"
 [ $RSYNC_SIMULATE = true ] && RSYNC_FLAGS="${RSYNC_FLAGS}n"
 
 # Prepare Rsync Command
+[ $RSYNC_EXCLUDE = true ] && RSYNC_OPTIONS="${RSYNC_OPTIONS} --exclude=\"node_modules\" --exclude=\"vendor\""
 [ $RSYNC_DELETE = true ] && RSYNC_OPTIONS="${RSYNC_OPTIONS} --delete"
 RSYNC="rsync -$RSYNC_FLAGS $RSYNC_OPTIONS $RSYNC_ARGS 
 ${HOST1}\"${SOURCE}\" 
