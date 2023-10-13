@@ -60,6 +60,7 @@ Library/Application Support/obs-studio/basic/scenes/
 Library/Application Support/obs-studio/global.ini
 Library/Application Support/Transmit/Favorites/Favorites.syncdata
 Library/Application Support/Transmit/Favorites/Favorites.xml
+Library/Preferences/abnerworks.Typora.plist
 Library/Preferences/com.adobe.Photoshop.plist
 Library/Preferences/com.bjango.istatmenus.plist
 Library/Preferences/com.bjango.istatmenus.status.plist
@@ -76,5 +77,9 @@ Library/Preferences/com.raycast.macos.plist
 Library/Preferences/com.rogueamoeba.Loopback.plist
 Library/Preferences/com.surteesstudios.Bartender.plist
 Library/Preferences/com.tinyapp.TablePlus.plist
+Library/Preferences/dev.warp.Warp-Stable.plist
+Library/Preferences/Hedge/
+Library/Preferences/net.mkswap.Dropshare5.plist
+Library/Preferences/nl.syncfactory.Hedge.Mac
 Library/Preferences/org.m0k.transmission.plist
 Library/Preferences/org.videolan.vlc.plist
