@@ -30,6 +30,7 @@
 .nanorc
 .netrc
 .profile
+.stripe/
 .ssh/authorized_keys
 .ssh/config
 .SwitchHosts/data/collection/hosts/

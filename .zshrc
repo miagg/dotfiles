@@ -127,6 +127,10 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # GitHub
 eval "$(github-copilot-cli alias -- "$0")"
 
+# Stripe
+fpath=(~/.stripe $fpath)
+autoload -Uz compinit && compinit -i
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
