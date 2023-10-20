@@ -49,6 +49,7 @@ brew 'testdisk'
 brew 'tmux'
 brew 'wget'
 brew 'wp-cli'
+brew 'wrk'
 brew 'youtube-dl'
 
 # Spatie Medialibrary
