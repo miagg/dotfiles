@@ -140,6 +140,8 @@ autoload -Uz compinit && compinit -i
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+export MYSQL_UNIX_PORT=/tmp/mysql_3306.sock
+
 # Herd injected PHP 8.2 configuration.
 export HERD_PHP_82_INI_SCAN_DIR="/Users/wolfkain/Library/Application Support/Herd/config/php/82/"
 
