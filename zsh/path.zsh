@@ -22,6 +22,6 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOMEBREW_PREFIX/opt/libpq/bin:$PATH"
 
 # Add Database binaries to path
-export PATH=/Users/Shared/DBngin/postgresql/15.1/bin:$PATH
-export PATH=/Users/Shared/DBngin/mysql/8.0.33/bin:$PATH
-export PATH=/Users/Shared/DBngin/redis/7.0.0/bin:$PATH
+export PATH=$PATH:/Users/Shared/DBngin/postgresql/15.1/bin
+export PATH=$PATH:/Users/Shared/DBngin/mysql/8.0.33/bin
+export PATH=$PATH:/Users/Shared/DBngin/redis/7.0.0/bin
