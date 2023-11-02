@@ -29,6 +29,7 @@
 .myclirc
 .nanorc
 .netrc
+.nvm/default-packages
 .profile
 .stripe/
 .ssh/authorized_keys
