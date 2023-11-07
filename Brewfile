@@ -69,6 +69,7 @@ brew 'yarn'
 
 # Apps
 cask 'anydesk'
+cask 'arc'
 cask 'audio-hijack'
 cask 'authy'
 cask 'bartender'
