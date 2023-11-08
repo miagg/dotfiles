@@ -32,6 +32,7 @@ alias vim="nvim"
 alias p='pass'
 alias pc="pass show -c1"
 alias pc2="pass show -c2"
+alias dg="dig +short"
 
 # Manage servers
 alias syn="ssh syn"
