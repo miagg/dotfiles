@@ -37,6 +37,7 @@ brew 'lnav'
 brew 'nano'
 brew 'ncdu'
 brew 'neovim'
+brew 'nmap'
 brew 'pass'
 brew 'pkg-config' # https://github.com/driesvints/dotfiles/issues/20
 brew 'pgsync'
