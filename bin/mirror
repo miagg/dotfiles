@@ -23,8 +23,8 @@
 #
 
 # Known Hosts
-MAIN='Zeus'
-BACKUP='Mars'
+MAIN='Titan'
+BACKUP='Zeus'
 
 # Constants
 VERSION='1.4'
