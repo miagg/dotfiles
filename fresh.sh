@@ -7,6 +7,7 @@ echo "Setting up your Mac..."
 export DOTFILES=$HOME/.dotfiles
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ~/.fzf/install
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
