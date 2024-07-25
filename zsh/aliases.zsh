@@ -37,6 +37,7 @@ alias ed='vim $(fzf --preview="bat --color=always {}")'
 
 # Manage servers
 alias syn="ssh syn"
+alias ss="ssh shopify-apps-cli"
 
 # Directories
 alias dotfiles="cd $DOTFILES"
