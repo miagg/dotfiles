@@ -16,7 +16,6 @@ alias uuid='uuidgen | tr "[:upper:]" "[:lower:]" |pbcopy'
 alias copyssh="pbcopy < $HOME/.ssh/id_ed25519.pub"
 alias reloadshell="source $HOME/.zshrc"
 alias ttfb="curl -s -w '\nLookup time:\t\t%{time_namelookup}\nConnect time:\t\t%{time_connect}\nSSL handshake time:\t%{time_appconnect}\nPre-Transfer time:\t%{time_pretransfer}\nRedirect time:\t\t%{time_redirect}\nTime to first byte:\t%{time_starttransfer}\n\nTotal time:\t\t%{time_total}\n' -o /dev/null"
-alias cd='zshz'
 alias ls='eza --icons=always'
 alias ll='eza --icons=always -Ahlo --color --group-directories-first'
 alias lscon="lsof -i +c 40 -P | grep ESTABLISHED | awk -v OFS='\t' '{print \$1, \$8, \$9}'"
