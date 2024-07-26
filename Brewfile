@@ -13,11 +13,13 @@ tap 'stripe/stripe-cli'
 
 # Binaries
 brew 'awscli'
+brew 'bat'
 brew 'bash' # Latest Bash version
 brew 'b2-tools'
 brew 'cloudflare/cloudflare/cloudflared'
 brew 'coreutils' # Those that come with macOS are outdated
 brew 'doctl'
+brew 'eza'
 brew 'figlet'
 brew 'ffmpeg'
 brew 'gh'
@@ -32,6 +34,7 @@ brew 'htop'
 brew 'httpie'
 # brew 'mackup'
 brew 'mas' # Mac App Store manager
+brew 'jk'
 brew 'k6'
 brew 'lnav'
 brew 'nano'
@@ -122,6 +125,7 @@ cask 'visual-studio-code'
 cask 'vlc'
 cask 'vnc-viewer'
 cask 'warp'
+cask 'yazi'
 cask 'zoom'
 
 # Quicklook
