@@ -48,6 +48,7 @@ brew 'pkg-config' # https://github.com/driesvints/dotfiles/issues/20
 brew 'pgsync'
 brew 'poppler'
 brew 'rg'
+brew 'pup'
 brew 'shellcheck'
 brew 'shopify-cli'
 brew 'siege'
