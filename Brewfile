@@ -36,7 +36,6 @@ brew 'htop'
 brew 'httpie'
 # brew 'mackup'
 brew 'mas' # Mac App Store manager
-brew 'jk'
 brew 'k6'
 brew 'lnav'
 brew 'nano'
