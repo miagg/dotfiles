@@ -119,7 +119,7 @@ export OPENAI_API_KEY=$(awk -F "=" '/^OPENAI_API_KEY=/{print $2}' $DOTFILES/.env
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='code'
 else
-  export EDITOR='nvim'
+  export EDITOR='nano'
 fi
 
 # Compilation flags

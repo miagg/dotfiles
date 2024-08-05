@@ -29,7 +29,6 @@ alias nodeinspect="ssh -nNTL 9229:localhost:9229"
 alias pt="papertrail"
 alias vi="nvim"
 alias vim="nvim"
-alias nano="nvim"
 alias p='pass'
 alias pc="pass show -c1"
 alias pc2="pass show -c2"
