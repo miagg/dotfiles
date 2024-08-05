@@ -12,6 +12,7 @@ tap 'shopify/shopify'
 tap 'stripe/stripe-cli'
 
 # Binaries
+brew 'aspell'
 brew 'awscli'
 brew 'bat'
 brew 'bash' # Latest Bash version
