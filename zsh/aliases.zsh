@@ -32,6 +32,7 @@ alias vim="nvim"
 alias p='pass'
 alias pc="pass show -c1"
 alias pc2="pass show -c2"
+alias pauth="pass show servers/apptime >/dev/null && echo '' | pbcopy && apw auth"
 alias dg="dig +short"
 alias ed='vim $(fzf --preview="bat --color=always {}")'
 
