@@ -102,7 +102,7 @@ function otp() {
         echo "This function requires apw, jq and awk to be installed"
         return 1
     fi
-    CODES=$(apw otp get $1 2>nul)
+    CODES=$(apw otp get $1 2>/dev/null)
     STATUS=$?
     # ✋ If return code 9, not authenticated, run apw auth
     if [ $STATUS -eq 9 ]; then
