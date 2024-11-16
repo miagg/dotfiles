@@ -80,7 +80,7 @@ echo 7. Install Drivers
 echo 8. Install Adobe Apps
 echo 9. Install Goodies Apps
 echo 10. Install Xcode
-echo 11. Manually configure Dropshare, F-Bar, Fork, IconJar, IINA, Jdownloader2, Logi Options, Mitti, Typora
+echo 11. Manually configure Dropshare, F-Bar, Fork, IINA, Jdownloader2, Logi Options, Typora
 echo 12. Import GPG key for password-store
 echo 13. Install composer packages. Run \'composer global require friendsofphp/php-cs-fixer beyondcode/expose statamic/cli laravel/forge-cli\'
 echo ''

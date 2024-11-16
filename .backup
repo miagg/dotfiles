@@ -1,4 +1,3 @@
-.authy.json
 .aws/config
 .aws/credentials
 .bash_profile
@@ -14,12 +13,7 @@
 .config/karabiner/assets/complex_modifications/1678012153.json
 .config/karabiner/automatic_backups/karabiner_20230305.json
 .config/karabiner/karabiner.json
-.config/mpv/mpv.conf
-.config/nvim/init.lua
-.config/nvim/lua/core/
-.config/nvim/lua/custom/
-.config/nvim/lua/plugins/configs/
-.config/nvim/lua/plugins/init.lua
+.config/nvim/
 .config/psysh/config.php
 .config/rclone/rclone.conf
 .gitconfig
@@ -43,7 +37,7 @@
 .yarnrc
 .z
 .zsh_history
-Documents/Adobe/Premiere Pro/24.0/
+Documents/Adobe/Premiere Pro/25.0/
 Library/Application Support/Audio Hijack 4/
 Library/Application Support/abnerworks.Typora/themes/
 Library/Application Support/Bartender/Bartender.BartenderPreferences/ShowForUpdates/
