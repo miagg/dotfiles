@@ -20,7 +20,7 @@ First, go through the checklist below to make sure you didn't forget anything be
 - Did you remember to save all important documents from non-iCloud directories?
 - Did you save all of your work from apps which aren't synced through iCloud?
 - Did you remember to export important data from your local database?
-- Did you update [mackup](https://github.com/lra/mackup) to the latest version and ran `mackup backup`?
+- Did you backup application preferences with `backup && bpg Tools`?
 
 ### Installing macOS cleanly
 
@@ -52,7 +52,7 @@ If you did all of the above you may now follow these install instructions to set
    ~/.dotfiles/fresh.sh
    ```
 
-5. After mackup is synced with your cloud storage, restore preferences by running `mackup restore`
+5. After mackup is synced with your cloud storage, restore preferences by running `bpg -c Tools && restore`
 6. Restart your computer to finalize the process
 
 Your Mac is now ready to use!
