@@ -1,5 +1,4 @@
 # Taps
-tap 'axllent/apps'
 tap 'cloudflare/cloudflare'
 tap 'heroku/brew'
 tap 'homebrew/cask'
