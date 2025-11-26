@@ -5,6 +5,7 @@ alias ...="cd ../.."
 alias clone='mirror -c'
 alias mp='mirror -l ~/Projects/ -e'
 alias bp='mirror -l ~/Projects/ -r /volume1/Common/Projects/ -h synology -e -a "--iconv=utf-8-mac,utf-8"'
+alias bpc='mirror -l ~/Projects/ -r /volume1/Common/Projects/ -h synology -e -c'
 alias bpa='mirror -l ~/Projects/ -r /volume1/Common/Projects/ -h synology -e -x -a "--iconv=utf-8-mac,utf-8 --exclude \"#Archive/\""' # Copy only
 alias bpg='mirror -l ~/Goodies/ -r /volume1/Common/Mac/Goodies/ -h synology -e -a "--iconv=utf-8-mac,utf-8"'
 alias dwsync='mirror -l ~/Projects/Sites/doctorweb.gr/doctorweb/storage/app/public/ -r www.doctorweb.gr/storage/app/public/ -h apptime'
