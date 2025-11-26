@@ -86,7 +86,7 @@ if [ $DIRECTION = "Right" ]; then
 	HOST1=''
 	HOST2="$REMOTE:"
 	[ -d "$SOURCE" ] && SOURCE="${SOURCE%/}/"
-	DESTINATION="${DESTINATION// /\ }"
+	#DESTINATION="${DESTINATION// /\ }"
 fi
 if [ $DIRECTION = "Left" ]; then
 	[ "$1" ] && [ ${1:0:1} == '/' ] && PREFIX='' || PREFIX="${LPREFIX:-$PWD/}"
@@ -95,7 +95,7 @@ if [ $DIRECTION = "Left" ]; then
 	HOST1="$REMOTE:"
 	HOST2=''
 	[ -d "$DESTINATION" ] && SOURCE="${SOURCE%/}/"
-	SOURCE="${SOURCE// /\ }"
+	#SOURCE="${SOURCE// /\ }"
 fi
 
 # Output Application Details
