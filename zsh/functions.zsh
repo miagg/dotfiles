@@ -1,11 +1,11 @@
 # Backup settings
 function backup() {
-    rsync -a --itemize-changes --recursive "$@" --files-from=$DOTFILES/.backup $HOME $HOME/Goodies/Tools/Backup/Settings
+    rsync -a --itemize-changes --delete --recursive "$@" --files-from=$DOTFILES/.backup $HOME $HOME/Goodies/Tools/Backup/Settings
 }
 
 # Restore settings
 function restore() {
-    rsync -a --itemize-changes --recursive "$@" --files-from=$DOTFILES/.backup $HOME/Goodies/Tools/Backup/Settings $HOME
+    rsync -a --itemize-changes --delete --recursive "$@" --files-from=$DOTFILES/.backup $HOME/Goodies/Tools/Backup/Settings $HOME
 }
 
 # Turn off mac after x minutes
