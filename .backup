@@ -28,6 +28,7 @@
 .stripe/
 .ssh/authorized_keys
 .ssh/config
+.ssh/config.d
 .SwitchHosts/data/collection/hosts/
 .tmux.conf
 .vimrc
@@ -46,17 +47,12 @@ Library/Application Support/Code/User/settings.json
 Library/Application Support/Code/User/snippets/css.json
 Library/Application Support/Code/User/snippets/php.json
 Library/Application Support/com.DanPristupov.Fork/custom-commands.json
-Library/Application Support/com.tinyapp.TablePlus/Cache/Favorite/Clear Stripe IDS.sql
-Library/Application Support/com.tinyapp.TablePlus/Cache/Favorite/Directus ESG Tireses Update Preset.sql
-Library/Application Support/com.tinyapp.TablePlus/Cache/Favorite/Directus ESG Tiresias Insert Presets.sql
 Library/Application Support/com.tinyapp.TablePlus/Data/ConnectionGroups.plist
 Library/Application Support/com.tinyapp.TablePlus/Data/Connections.plist
 Library/Application Support/Loopback/Devices.plist
 Library/Application Support/obs-studio/basic/profiles/
 Library/Application Support/obs-studio/basic/scenes/
 Library/Application Support/obs-studio/global.ini
-Library/Application Support/Transmit/Favorites/Favorites.syncdata
-Library/Application Support/Transmit/Favorites/Favorites.xml
 Library/Preferences/abnerworks.Typora.plist
 Library/Preferences/com.adobe.Photoshop.plist
 Library/Preferences/com.bjango.istatmenus.plist
@@ -69,7 +65,6 @@ Library/Preferences/com.googlecode.iterm2.plist
 Library/Preferences/com.jetbrains.PhpStorm.plist
 Library/Preferences/com.logitech.manager.setting.ffff.plist
 Library/Preferences/com.obsproject.obs-studio.plist
-Library/Preferences/com.panic.Transmit.plist
 Library/Preferences/com.raycast.macos.plist
 Library/Preferences/com.rogueamoeba.Loopback.plist
 Library/Preferences/com.surteesstudios.Bartender.plist
