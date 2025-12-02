@@ -28,7 +28,7 @@
 .stripe/
 .ssh/authorized_keys
 .ssh/config
-.ssh/config.d
+.ssh/config.d/
 .SwitchHosts/data/collection/hosts/
 .tmux.conf
 .vimrc
