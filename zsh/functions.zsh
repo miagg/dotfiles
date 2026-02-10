@@ -93,6 +93,13 @@ function yy() {
 	rm -f -- "$tmp"
 }
 
+function reset_meilisearch() {
+    brew services stop meilisearch
+    rm -rf /opt/homebrew/var/meilisearch/data.ms
+    meilisearch --db-path /opt/homebrew/var/meilisearch/data.ms --import-dump /opt/homebrew/var/dumps/20260210-092226266.dump
+    brew services start meilisearch
+}
+
 function otp() {
     if [ -z "$1" ]; then
         echo "Usage: otp <domain>"
