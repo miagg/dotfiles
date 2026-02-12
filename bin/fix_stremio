@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+echo 'Fixing Stremio App...'
+echo 
+echo '👉 STEP 1: Removing quarantine flag...'
+xattr -cr /Applications/Stremio.app
+echo '👉 STEP 2: Removing App forks...'
+find /Applications/Stremio.app -name ".DS_Store" -delete
+find /Applications/Stremio.app -name "._*" -delete
+echo '👉 STEP 3: Self-signing the app...'
+echo ===================
+echo ENTER YOUR PASSWORD
+echo ===================
+sudo codesign --force --deep --sign - /Applications/Stremio.app
+echo 'Done ✨'
+echo 'Enjoy watching.'
