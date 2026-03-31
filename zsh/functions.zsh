@@ -93,10 +93,16 @@ function yy() {
 	rm -f -- "$tmp"
 }
 
+function dump_meilisearch() {
+    rm -rf /opt/homebrew/var/dumps/*.dump 2>/dev/null
+    curl -X POST "http://127.0.0.1:7700/dumps"
+    echo "\nMeilisearch data was dumped."
+}
+
 function reset_meilisearch() {
     brew services stop meilisearch
     rm -rf /opt/homebrew/var/meilisearch/data.ms
-    meilisearch --db-path /opt/homebrew/var/meilisearch/data.ms --import-dump /opt/homebrew/var/dumps/$(ls -snew /opt/homebrew/var/dumps | head -n 1)
+    meilisearch --db-path /opt/homebrew/var/meilisearch/data.ms --import-dump /opt/homebrew/var/dumps/$(ls -sold /opt/homebrew/var/dumps | head -n 1)
     brew services start meilisearch
 }
 
