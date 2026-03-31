@@ -96,7 +96,7 @@ function yy() {
 function reset_meilisearch() {
     brew services stop meilisearch
     rm -rf /opt/homebrew/var/meilisearch/data.ms
-    meilisearch --db-path /opt/homebrew/var/meilisearch/data.ms --import-dump /opt/homebrew/var/dumps/20260210-092226266.dump
+    meilisearch --db-path /opt/homebrew/var/meilisearch/data.ms --import-dump /opt/homebrew/var/dumps/$(ls -snew /opt/homebrew/var/dumps | head -n 1)
     brew services start meilisearch
 }
 
