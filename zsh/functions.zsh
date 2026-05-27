@@ -106,6 +106,23 @@ function reset_meilisearch() {
     brew services start meilisearch
 }
 
+function cleanup_old_node_versions() {
+    for v in $(nvm ls --no-colors | grep -o 'v[0-9]\+\.[0-9]\+\.[0-9]\+' | awk -F. '
+    {
+      major=$1
+      latest[major]=$0
+      versions[major]=versions[major]" "$0
+    }
+    END {
+      for (m in versions) {
+        split(versions[m], arr, " ")
+        for (i in arr)
+          if (arr[i] != "" && arr[i] != latest[m])
+            print arr[i]
+      }
+    }'); do nvm uninstall "$v"; done
+}
+
 function otp() {
     if [ -z "$1" ]; then
         echo "Usage: otp <domain>"
