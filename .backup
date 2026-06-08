@@ -29,7 +29,7 @@
 .ssh/authorized_keys
 .ssh/config
 .ssh/config.d/
-.SwitchHosts/data/collection/hosts/
+.SwitchHosts/
 .tmux.conf
 .vimrc
 .warp/keybindings.yaml
