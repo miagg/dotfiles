@@ -19,6 +19,7 @@ alias reloadshell="source $HOME/.zshrc"
 alias ttfb="curl -s -w '\nLookup time:\t\t%{time_namelookup}\nConnect time:\t\t%{time_connect}\nSSL handshake time:\t%{time_appconnect}\nPre-Transfer time:\t%{time_pretransfer}\nRedirect time:\t\t%{time_redirect}\nTime to first byte:\t%{time_starttransfer}\n\nTotal time:\t\t%{time_total}\n' -o /dev/null"
 alias ls='eza'
 alias ll='eza -Ahlo --color --group-directories-first'
+alias cat='bat'
 alias lscon="lsof -i +c 40 -P | grep ESTABLISHED | awk -v OFS='\t' '{print \$1, \$8, \$9}'"
 alias lsports="lsof -i +c 40 -P | grep LISTEN | awk -v OFS='\t' '{print \$1, \$8, \$9}'"
 alias phpstorm='open -a /Applications/PhpStorm.app'
