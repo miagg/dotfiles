@@ -49,6 +49,7 @@ Library/Application Support/Code/User/snippets/php.json
 Library/Application Support/com.DanPristupov.Fork/custom-commands.json
 Library/Application Support/com.tinyapp.TablePlus/Data/ConnectionGroups.plist
 Library/Application Support/com.tinyapp.TablePlus/Data/Connections.plist
+Library/Application Support/com.tinyapp.TablePlus/Cache/Favorite
 Library/Application Support/Loopback/Devices.plist
 Library/Application Support/obs-studio/basic/profiles/
 Library/Application Support/obs-studio/basic/scenes/
