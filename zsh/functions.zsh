@@ -160,3 +160,21 @@ function otp() {
     echo $CODE | pbcopy
     echo "🔑 OTP code copied to clipboard"
 }
+
+function invert_tmux() {
+    local conf="$HOME/.tmux.conf"
+
+    current=$(grep -E "^[[:space:]]*set(-option)?[[:space:]]+-g[[:space:]]+@catppuccin_flavor" "$conf" | sed -E "s/.*@catppuccin_flavor[[:space:]]+['\"]?([a-z]+)['\"]?.*/\\1/" | head -n1)
+
+    if [ "$current" = "latte" ]; then
+        sed -E -i '' "s/@catppuccin_flavor[[:space:]]+['\"]?latte['\"]?/@catppuccin_flavor 'mocha'/" "$conf"
+        echo "☕ Switched to Catppuccin Mocha"
+    else
+        sed -E -i '' "s/@catppuccin_flavor[[:space:]]+['\"]?mocha['\"]?/@catppuccin_flavor 'latte'/" "$conf"
+        echo "🥛 Switched to Catppuccin Latte"
+    fi
+
+    if [ -n "$TMUX" ]; then
+        tmux source-file "$conf"
+    fi
+}
