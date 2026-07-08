@@ -167,10 +167,10 @@ function invert_tmux() {
     current=$(grep -E "^[[:space:]]*set(-option)?[[:space:]]+-g[[:space:]]+@catppuccin_flavor" "$conf" | sed -E "s/.*@catppuccin_flavor[[:space:]]+['\"]?([a-z]+)['\"]?.*/\\1/" | head -n1)
 
     if [ "$current" = "latte" ]; then
-        sed -E -i '' "s/@catppuccin_flavor[[:space:]]+['\"]?latte['\"]?/@catppuccin_flavor 'mocha'/" "$conf"
-        echo "☕ Switched to Catppuccin Mocha"
+        sed -E -i '' "s/@catppuccin_flavor[[:space:]]+['\"]?latte['\"]?/@catppuccin_flavor 'frappe'/" "$conf"
+        echo "☕ Switched to Catppuccin Frappe"
     else
-        sed -E -i '' "s/@catppuccin_flavor[[:space:]]+['\"]?mocha['\"]?/@catppuccin_flavor 'latte'/" "$conf"
+        sed -E -i '' "s/@catppuccin_flavor[[:space:]]+['\"]?frappe['\"]?/@catppuccin_flavor 'latte'/" "$conf"
         echo "🥛 Switched to Catppuccin Latte"
     fi
 
