@@ -50,3 +50,6 @@ Icon
 
 # Other
 pentest
+
+# Claude
+**/.claude/settings.local.json
