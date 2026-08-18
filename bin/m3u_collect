@@ -1,0 +1,261 @@
+#!/usr/bin/env bash
+#
+#	m3u_collect 1.0
+#	Description: Collect every track of an M3U playlist into a folder named
+#	             after the playlist, renaming them with a running index
+#	             (eg. "01 Song.mp3"). Optionally converts m4a tracks to mp3.
+#	Author: Angelos Michalopoulos
+#	Last Updated: 18/08/2026
+#
+#	Argument List:
+#
+#	[playlist]		Path to the .m3u / .m3u8 playlist file
+#	[target]		Directory to create the playlist folder in (Default: Current Directory)
+#	[-y]			Convert m4a tracks to mp3 without asking
+#	[-n]			Never convert m4a tracks (copy them as they are)
+#	[-h]			Help Screen
+#
+
+VERSION='1.0'
+
+C0='\033[m'			# System Default Color
+C1='\033[2;38m'		# Light, Dark Green
+C2='\033[3;37m'		# Regular, White
+C3='\033[1;33m'		# Bold, Yellow
+C4='\033[1;31m'		# Bold, Red
+C5='\033[1;36m'		# Bold, Cyan
+
+# Defaults
+BITRATE='320k'
+CONVERT='ask'
+TARGET_ROOT="$PWD"
+PLAYLIST=''
+
+usage() {
+	echo -e "${C3}m3u_collect ${VERSION}${C0}"
+	echo -e "${C2}Collect the tracks of an M3U playlist into an indexed folder.${C0}\n"
+	echo -e "${C3}Usage:${C0} m3u_collect [-y|-n] <playlist.m3u> [target directory]\n"
+	echo -e "  -y  Convert m4a tracks to mp3 (${BITRATE}) without asking"
+	echo -e "  -n  Never convert m4a tracks, copy them as they are"
+	echo -e "  -h  This help screen"
+}
+
+error() {
+	echo -e "${C4}Error:${C0} $1" >&2
+}
+
+# Decode a file:// URI into a plain path
+urldecode() {
+	local s="$1"
+	printf '%b' "${s//%/\\x}"
+}
+
+# Remove an already existing index from a track name (eg. "03 - Song" -> "Song")
+strip_index() {
+	local name="$1" stripped
+	stripped=$(printf '%s' "$name" | sed -E 's/^[0-9]{1,3}([[:space:]]*[-._)]+[[:space:]]*|[[:space:]]+)//')
+	if [ -n "$stripped" ]; then
+		printf '%s' "$stripped"
+	else
+		printf '%s' "$name"
+	fi
+}
+
+# Make a string safe to use as a file or folder name
+sanitize() {
+	printf '%s' "$1" | tr '/:' '--' | sed -E 's/^[[:space:]]+//; s/[[:space:]]+$//'
+}
+
+convert_m4a() {
+	local src="$1" dst="$2"
+
+	# Keep the embedded cover art when ffmpeg can carry it over
+	ffmpeg -v error -y -i "$src" \
+		-map 0:a:0 -map '0:v:0?' \
+		-c:a libmp3lame -b:a "$BITRATE" \
+		-c:v copy -disposition:v:0 attached_pic \
+		-map_metadata 0 -id3v2_version 3 \
+		"$dst" 2>/dev/null && return 0
+
+	ffmpeg -v error -y -i "$src" \
+		-map 0:a:0 -vn \
+		-c:a libmp3lame -b:a "$BITRATE" \
+		-map_metadata 0 -id3v2_version 3 \
+		"$dst"
+}
+
+# Arguments
+while [ $# -gt 0 ]; do
+	case "$1" in
+		-h|--help)	usage; exit 0 ;;
+		-y)			CONVERT='yes' ;;
+		-n)			CONVERT='no' ;;
+		-*)			error "Unknown option '$1'"; usage; exit 1 ;;
+		*)
+			if [ -z "$PLAYLIST" ]; then
+				PLAYLIST="$1"
+			else
+				TARGET_ROOT="$1"
+			fi
+			;;
+	esac
+	shift
+done
+
+if [ -z "$PLAYLIST" ]; then
+	error "No playlist given"
+	usage
+	exit 1
+fi
+
+if [ ! -f "$PLAYLIST" ]; then
+	error "Playlist '$PLAYLIST' does not exist"
+	exit 1
+fi
+
+if [ ! -d "$TARGET_ROOT" ]; then
+	error "Target directory '$TARGET_ROOT' does not exist"
+	exit 1
+fi
+
+PLAYLIST_DIR=$(cd "$(dirname "$PLAYLIST")" && pwd)
+PLAYLIST_NAME=$(basename "$PLAYLIST")
+PLAYLIST_NAME="${PLAYLIST_NAME%.*}"
+
+# Parse the playlist
+TRACKS=()
+MISSING=()
+HAS_M4A=0
+
+while IFS= read -r line || [ -n "$line" ]; do
+	line="${line%$'\r'}"
+
+	case "$line" in
+		'#PLAYLIST:'*)
+			name=$(sanitize "${line#\#PLAYLIST:}")
+			[ -n "$name" ] && PLAYLIST_NAME="$name"
+			continue
+			;;
+		'#'*|'')
+			continue
+			;;
+	esac
+
+	path="$line"
+	case "$path" in
+		file://*)	path=$(urldecode "${path#file://}") ;;
+	esac
+	case "$path" in
+		/*)			;;
+		*)			path="$PLAYLIST_DIR/$path" ;;
+	esac
+
+	if [ -f "$path" ]; then
+		TRACKS+=("$path")
+		ext=$(printf '%s' "${path##*.}" | tr '[:upper:]' '[:lower:]')
+		[ "$ext" = 'm4a' ] && HAS_M4A=1
+	else
+		MISSING+=("$line")
+	fi
+done < "$PLAYLIST"
+
+TOTAL=${#TRACKS[@]}
+
+if [ "$TOTAL" -eq 0 ]; then
+	error "No existing tracks found in '$PLAYLIST'"
+	exit 1
+fi
+
+# Ask about m4a conversion before doing any work
+DO_CONVERT=0
+if [ "$HAS_M4A" -eq 1 ]; then
+	if [ "$CONVERT" = 'ask' ]; then
+		if [ -r /dev/tty ]; then
+			exec 3< /dev/tty
+		else
+			exec 3<&0
+		fi
+		echo -e "${C3}This playlist contains m4a files.${C0}"
+		read -r -u 3 -p "$(echo -e "Convert them to mp3 (${BITRATE})? [y/N] ")" answer
+		exec 3<&-
+		case "$answer" in
+			[Yy]*)	DO_CONVERT=1 ;;
+		esac
+	elif [ "$CONVERT" = 'yes' ]; then
+		DO_CONVERT=1
+	fi
+
+	if [ "$DO_CONVERT" -eq 1 ] && ! command -v ffmpeg >/dev/null 2>&1; then
+		error "ffmpeg is not installed, cannot convert m4a files"
+		exit 1
+	fi
+fi
+
+# Create the playlist folder
+DEST="$TARGET_ROOT/$(sanitize "$PLAYLIST_NAME")"
+if ! mkdir -p "$DEST"; then
+	error "Could not create '$DEST'"
+	exit 1
+fi
+
+# Three digit indexes for playlists longer than 99 tracks
+if [ "$TOTAL" -gt 99 ]; then
+	PAD=3
+else
+	PAD=2
+fi
+
+echo -e "${C1}${TOTAL} tracks${C0} -> ${C5}${DEST}${C0}\n"
+
+COPIED=0
+CONVERTED=0
+FAILED=0
+INDEX=0
+
+for track in "${TRACKS[@]}"; do
+	INDEX=$((INDEX + 1))
+
+	filename=$(basename "$track")
+	ext="${filename##*.}"
+	base="${filename%.*}"
+	lower_ext=$(printf '%s' "$ext" | tr '[:upper:]' '[:lower:]')
+
+	base=$(sanitize "$(strip_index "$base")")
+	number=$(printf "%0${PAD}d" "$INDEX")
+
+	if [ "$lower_ext" = 'm4a' ] && [ "$DO_CONVERT" -eq 1 ]; then
+		target="$DEST/$number $base.mp3"
+		echo -en "${C2}${number}${C0} ${base} ${C1}(mp3)${C0} "
+		if convert_m4a "$track" "$target"; then
+			CONVERTED=$((CONVERTED + 1))
+			echo -e "[${C5} OK ${C0}]"
+		else
+			FAILED=$((FAILED + 1))
+			rm -f "$target"
+			echo -e "[${C4} FAIL ${C0}]"
+		fi
+	else
+		target="$DEST/$number $base.$ext"
+		echo -en "${C2}${number}${C0} ${base} "
+		if cp -p "$track" "$target"; then
+			COPIED=$((COPIED + 1))
+			echo -e "[${C5} OK ${C0}]"
+		else
+			FAILED=$((FAILED + 1))
+			echo -e "[${C4} FAIL ${C0}]"
+		fi
+	fi
+done
+
+echo -e "\n${C1}Copied: ${COPIED}${C0}"
+[ "$CONVERTED" -gt 0 ] && echo -e "${C1}Converted: ${CONVERTED}${C0}"
+[ "$FAILED" -gt 0 ] && echo -e "${C4}Failed: ${FAILED}${C0}"
+
+if [ ${#MISSING[@]} -gt 0 ]; then
+	echo -e "${C3}Missing: ${#MISSING[@]}${C0}"
+	for entry in "${MISSING[@]}"; do
+		echo -e "  ${C3}${entry}${C0}"
+	done
+fi
+
+exit 0
