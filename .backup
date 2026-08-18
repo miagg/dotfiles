@@ -16,6 +16,7 @@
 .config/nvim/
 .config/psysh/config.php
 .config/rclone/rclone.conf
+.gamdl/
 .gitconfig
 .gnupg/gpg-agent.conf
 .gnupg/gpg.conf
