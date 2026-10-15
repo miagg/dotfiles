@@ -37,6 +37,8 @@ alias pc2="pass show -c2"
 alias pa="pass show servers/apptime >/dev/null && echo '' | pbcopy"
 alias dg="dig +short"
 alias ed='vim $(fzf --preview="bat --color=always {}")'
+alias media-db="$HOME/Projects/Noematic/iconik/media-db"
+alias media-ingest="$HOME/Projects/Noematic/iconik/ingest"
 
 # Manage servers
 alias syn="ssh syn"
