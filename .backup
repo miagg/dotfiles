@@ -33,8 +33,6 @@
 .SwitchHosts/
 .tmux.conf
 .vimrc
-.warp/keybindings.yaml
-.warp/themes/vs_code.yaml
 .wget-hsts
 .yarnrc
 .z
@@ -42,7 +40,6 @@
 Documents/Adobe/Premiere Pro/25.0/
 Library/Application Support/Audio Hijack 4/
 Library/Application Support/abnerworks.Typora/themes/
-Library/Application Support/Bartender/Bartender.BartenderPreferences/ShowForUpdates/
 Library/Application Support/Code/User/keybindings.json
 Library/Application Support/Code/User/settings.json
 Library/Application Support/Code/User/snippets/css.json
@@ -71,9 +68,7 @@ Library/Preferences/com.logitech.manager.setting.ffff.plist
 Library/Preferences/com.obsproject.obs-studio.plist
 Library/Preferences/com.raycast.macos.plist
 Library/Preferences/com.rogueamoeba.Loopback.plist
-Library/Preferences/com.surteesstudios.Bartender.plist
 Library/Preferences/com.tinyapp.TablePlus.plist
-Library/Preferences/dev.warp.Warp-Stable.plist
 Library/Preferences/Hedge/
 Library/Preferences/net.mkswap.Dropshare5.plist
 Library/Preferences/nl.syncfactory.Hedge.Mac.plist
