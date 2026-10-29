@@ -164,3 +164,5 @@ export HERD_PHP_83_INI_SCAN_DIR="/Users/wolfkain/Library/Application Support/Her
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# Claude
+export PATH="$HOME/.local/bin:$PATH"
