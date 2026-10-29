@@ -2,6 +2,7 @@
 .aws/credentials
 .bash_profile
 .bashrc
+.claude/
 .cloudflared/cert.pem
 .composer/auth.json
 .composer/composer.json
